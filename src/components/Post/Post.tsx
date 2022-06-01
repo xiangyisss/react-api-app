@@ -1,20 +1,22 @@
 import React from 'react';
-import { Todo } from '../../Utils/Todo';
+import { PostT } from '../../Utils/Post';
 
 interface Props {
-  todos: Todo[];
-  handleDelete: (todoId: number) => void;
+  posts: PostT[];
+  handleDelete: (postId: number) => void;
 }
 
 export const Post = (props: Props) => {
-  const { todos, handleDelete } = props;
+  const { posts, handleDelete } = props;
 
   return (
     <div>
       <ul>
-        {todos.map((todo) => (
-          <li key={todo.id} onClick={() => handleDelete(todo.id)}>
-            <span>{todo.title}</span>
+        {posts.map((post) => (
+          <li key={post.id} onClick={() => handleDelete(post.id)}>
+            <h3>{post.title}</h3>
+            <br></br>
+            <p>{post.body}</p>
           </li>
         ))}
       </ul>

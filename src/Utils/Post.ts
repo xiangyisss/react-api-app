@@ -1,6 +1,6 @@
-export interface Todo {
+export interface PostT {
   id: number;
   title: string;
   userId: number;
-  completed: boolean;
+  body: string;
 }
